@@ -1,7 +1,7 @@
 {
   "name": "xrealmgold",
   "version": "1.0.0",
-  "description": "Cross realm gold transfer appltool",
+  "description": "Cross realm gold transfer tool.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

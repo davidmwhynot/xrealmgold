@@ -9,7 +9,7 @@ module.exports = {
 			{
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
-				include: path.resolve(__dirname, 'src'),
+				include: path.resolve(__dirname, 'src', 'public', 'js'),
 				loader: 'babel-loader'
 			}
 		]

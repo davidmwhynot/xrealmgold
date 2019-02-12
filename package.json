@@ -1,0 +1,19 @@
+{
+  "name": "xrealmgold",
+  "version": "1.0.0",
+  "description": "Cross realm gold transfer appltool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmwhynot/xrealmgold.git"
+  },
+  "author": "David Whynot",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/davidmwhynot/xrealmgold/issues"
+  },
+  "homepage": "https://github.com/davidmwhynot/xrealmgold#readme"
+}

@@ -1,0 +1,258 @@
+@import "variables";
+
+// * {
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+$accent: $success;
+$body-size: calc(1200px - 7rem);
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Exo 2", sans-serif !important;
+  // font-family: 'Roboto Condensed', sans-serif !important;
+  font-weight: 100 !important;
+  letter-spacing: normal !important;
+}
+
+* {
+  // font-family: 'Exo 2', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+  letter-spacing: 0.4px;
+  // font-weight: 100;
+}
+
+p,
+a,
+li {
+  font-size: 1.3rem;
+}
+
+// .btn,
+input {
+  // font-weight: 600 !important;
+}
+
+@media (min-width: 1200px) {
+  .app {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-template-rows: 65px auto;
+    grid-template-areas:
+      "topbar topbar topbar topbar"
+      "sidebar body body body";
+  }
+
+  .top-bar {
+    grid-area: topbar;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid $accent;
+    h1 {
+      width: 200px !important;
+      all: unset;
+      font-family: "IBM Plex Sans Condensed", sans-serif !important;
+      font-size: 1.8rem;
+      align-self: center;
+      text-align: center;
+      color: $teal;
+      font-weight: 500 !important;
+      padding: 0;
+    }
+  }
+
+  .side-bar {
+    grid-area: sidebar;
+    border-right: 2px solid $accent;
+  }
+
+  .body {
+    grid-area: body;
+    padding: 2.5rem 3rem;
+    padding-bottom: 0;
+    background-color: $secondary;
+  }
+
+  %pages-shared {
+    max-width: $body-size;
+    margin: 0 auto;
+  }
+
+  .main {
+    @extend %pages-shared;
+    display: grid;
+    grid-template-columns: 600px auto;
+    grid-gap: 3rem;
+  }
+
+  .about {
+    @extend %pages-shared;
+  }
+
+  %main-shared {
+    background-color: $gray-800;
+    border: 2px solid darken($accent, 20%);
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+
+    h1,
+    h2,
+    h3 {
+      border-bottom: 2px solid $accent;
+    }
+  }
+
+  .request {
+    @extend %main-shared;
+    display: grid;
+    grid-template-columns: repeat(2, calc(300px - 4.5rem));
+    grid-gap: 3rem;
+    // height: 300px;
+    label {
+      margin-bottom: 0;
+      display: inline-block;
+      --request-label-width: 70px;
+      min-width: var(--request-label-width);
+      max-width: var(--request-label-width);
+      width: var(--request-label-width);
+    }
+  }
+
+  .request-main {
+  }
+
+  .request-group {
+  }
+
+  %request-input-shared {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 2px solid $primary;
+    color: $white;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    transition: border-color 250ms ease-in;
+  }
+  %request-input-shared:focus {
+    outline: none;
+    border-color: $success;
+  }
+
+  .amount-input {
+    @extend %request-input-shared;
+    width: 60px;
+    margin-right: 10px;
+    text-align: right;
+  }
+
+  .request-title {
+    font-size: 2rem;
+  }
+
+  .text-input {
+    @extend %request-input-shared;
+    width: 100%;
+  }
+
+  %request-row {
+    margin-top: 0.5rem;
+  }
+
+  .request-row {
+    @extend %request-row;
+    display: flex;
+  }
+
+  .amount-row {
+    @extend %request-row;
+  }
+
+  .submit-row {
+    margin-top: 0.5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 0.5rem;
+  }
+
+  .request-tool {
+    p {
+      font-size: 1.15rem;
+      font-weight: 100 !important;
+    }
+  }
+
+  .numpad {
+    %numpad-key-shared {
+    }
+  }
+
+  .orders {
+    @extend %main-shared;
+  }
+}
+
+// css transition groups
+// fade
+.fade-appear {
+  opacity: 0.01 !important;
+}
+
+.fade-appear-active {
+  opacity: 1 !important;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-enter {
+  opacity: 0.01 !important;
+}
+
+.fade-enter-active {
+  opacity: 1 !important;
+  transition: opacity 250ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1 !important;
+}
+
+.fade-exit-active {
+  opacity: 0.01 !important;
+  transition: opacity 250ms ease-in;
+}
+
+// slide
+.slide-appear {
+  transform: scaleY(0);
+}
+
+.slide-appear-active {
+  transform: scaleY(1);
+  transition: max-height 250ms ease-in;
+}
+
+.slide-enter {
+  transform: scaleY(0);
+}
+
+.slide-enter-active {
+  transform: scaleY(1);
+  transition: max-height 250ms ease-in;
+}
+
+.slide-exit {
+  transform: scaleY(1);
+}
+
+.slide-exit-active {
+  transform: scaleY(0);
+  transition: max-height 250ms ease-in;
+}
